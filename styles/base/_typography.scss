@@ -1,0 +1,153 @@
+﻿// Typography variables
+$header-color: $blue;
+$link-color-default: $blue;
+$link-color-hover: $lightblue;
+$link-color-active: $yellow;
+$text-highlight-bgcolor: $lightblue;
+$text-highlight-color: $grey;
+
+// Primary Button Colors
+$btn-primary-text-color: $grey;
+$btn-primary-bg-color:$lightblue;
+$btn-primary-border-color: $lightblue;
+$btn-primary-hover-text-color:$grey;
+$btn-primary-disabled-color: $white;
+
+// Stock Button Colors
+$btn-text-color: $grey;
+$btn-bg-color: $grey;
+$btn-active-color: $grey;
+$btn-border-color: $grey;
+$btn-hover-text-color: $grey;
+$btn-disabled-color: $grey;
+
+
+//set size in relation to base font size. 
+//$base-font-size and $base-line-height taken from normalize
+$base-font-size: .8rem; 
+
+$font-sizes: ( 
+    h1: $base-font-size*2, 
+    h2: $base-font-size*1.75, 
+    h3: $base-font-size*1.5, 
+    h4: $base-font-size*1.25, 
+    h5: $base-font-size*1.1, 
+    h6: $base-font-size, 
+    p: $base-font-size, 
+    body: $base-font-size );
+
+@each $tag, $output-size in $font-sizes {
+    //set size based on actual size (the result of font map)
+    #{$tag} {
+        margin: 0;
+        @include breakpoint($mobile-only) {
+            font-size: $output-size;
+        }
+
+        @include breakpoint($tablet-only) {
+            font-size: $output-size;
+        }
+
+        @include breakpoint($desktop-only) {
+            font-size: $output-size*1.25;
+        }
+
+        @include breakpoint($ext-desktop) {
+            font-size: $output-size*1.5;
+        }
+    }
+}
+
+body {
+    font-family:  "Open Sans", sans-serif;
+    color: $almostblack;
+}
+
+// Headings
+%base-header {
+    font-weight: normal;
+    font-style: normal;
+    text-rendering: optimizeLegibility;
+    font-family:  "Raleway", sans-serif;
+    font-variant: small-caps;
+    color: $header-color;
+    letter-spacing: .125ch;
+    a {
+        font-weight: inherit;
+    }
+}
+
+h1, h2, h3, h4 {
+    @extend %base-header;
+    font-weight: bold;
+}
+
+h5, h6 {
+    @extend %base-header;
+}
+
+em {
+    font-style: italic;
+}
+
+strong {
+    font-weight: bold;
+}
+
+small {
+    font-size: 80%;
+}
+
+
+/* Links */
+%link-core {
+    font-family:  "Raleway", sans-serif;
+    text-decoration: none;
+    font-style: normal;
+    color: $blue;
+    outline: 0;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+a {
+    @extend %link-core;
+
+    &:visited {
+        @extend %link-core;
+    }
+
+    &:hover, &:focus {
+        color: $link-color-hover;
+        cursor: pointer;
+    }
+
+    &.active {
+        color: $link-color-active;
+    }
+
+    &.disabled, &[disabled] {
+        cursor: default;
+        pointer-events: none;
+    }
+}
+
+p a, p a:visited {
+    line-height: inherit;
+}
+
+
+/* Text Highlighting */
+%text-highlight {
+    background: $text-highlight-bgcolor;
+    color: $text-highlight-color;
+    text-shadow: none;
+}
+
+::-moz-selection {
+    @extend %text-highlight;
+}
+
+::selection {
+    @extend %text-highlight;
+}

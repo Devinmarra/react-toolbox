@@ -1,0 +1,6 @@
+//cool mixin that i may not need
+@mixin aspectRatio($ar-width, $ar-height, $unit:px, $baseWidth:100) {
+    $aspectRatio : ($ar-width/$ar-height);
+    width: $baseWidth+$unit;
+    height: ($baseWidth/$aspectRatio)+$unit;
+}

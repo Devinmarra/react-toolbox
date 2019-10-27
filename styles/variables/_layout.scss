@@ -1,0 +1,24 @@
+// Column Variables
+$column: 60px;
+$gutter: 20px;
+
+$susy: (
+    'columns': 4,
+    'column-width': $column,
+    'gutters': 1/3,
+    'math': static,
+    'output': flex,
+    'gutter-position': after
+);
+
+// Susy Static Grid Breakpoint Variables (Media Queries)
+$ext-desktop: 1320px;
+$desktop: 1000px;
+$tablet: 660px;
+$mobile: 320px;
+$mobile-only: 0 (($tablet)-0.00001);
+$tablet-only: $tablet (($desktop)-0.00001);
+$desktop-only: $desktop (($ext-desktop)-0.00001);
+$mobile-desktop: 0 (($ext-desktop)-0.00001);
+$mobile-tablet: 0 (($desktop)-0.00001);
+$tablet-desktop: $tablet (($ext-desktop)-0.00001);

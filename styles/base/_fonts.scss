@@ -1,0 +1,23 @@
+﻿
+/* Fonts
+	================================================== */
+// Font & Image path variables
+$fonts_path: "/Content/Fonts";
+$images_path: "/Content/Images";
+
+// Google Fonts
+//@import url(https://fonts.googleapis.com/css?family=Inconsolata);
+@import url("https://fonts.googleapis.com/css?family=Raleway&display=swap");
+
+// Font Icons
+@font-face {
+    font-family: 'fonticons';
+    src: url("#{$fonts_path}/fonticons.eot");
+    src: url("#{$fonts_path}/fonticons.eot?#iefix") format('embedded-opentype'), url("#{$fonts_path}/fonticons.woff") format('woff'), url("#{$fonts_path}/fonticons.ttf") format('truetype'), url("#{$fonts_path}/fonticons.svg") format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+// Font Variables
+$fonticons: 'fonticons';

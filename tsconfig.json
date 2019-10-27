@@ -1,0 +1,41 @@
+{
+  "extends": "./tsconfig.paths.json",
+  "compilerOptions": {
+    "outDir": "build/dist",
+    "target": "es5",
+    "lib": [
+      "es6",
+      "dom",
+      "es2017.object"
+    ],
+    "jsx": "preserve",
+    "module": "esnext",
+    "downlevelIteration": true,
+    "sourceMap": true,
+    "allowJs": true,
+    "moduleResolution": "node",
+    "rootDir": "src",
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noImplicitAny": true,
+    "noUnusedParameters": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "noUnusedLocals": true,
+    "pretty": true,
+    "skipLibCheck": true,
+    "esModuleInterop": false,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "noEmit": true,
+    "isolatedModules": true
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "src/setupTests.ts"
+  ]
+}

@@ -1,0 +1,100 @@
+﻿//NPM imports
+@import 
+     "~normalize-scss/sass/normalize",
+     "~compass-mixins/lib/compass",
+     "~breakpoint-sass/stylesheets/breakpoint",
+     "~susy/sass/susy";
+
+$base-unit: rem;
+
+@include normalize();
+
+//Project Imports
+@import 
+    "variables/_fonts.scss",
+    "variables/_layout.scss",
+    "variables/_colors.scss",
+    "base/_fonts.scss",
+    "base/_typography.scss",
+    "helpers/_placeholders",
+    "helpers/_functions",
+    "helpers/_mixins.scss";
+
+
+/*Global resets*/
+article {
+    padding: 0;
+}
+
+figure {
+    margin: 0;
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    -webkit-margin-start: 0;
+    -webkit-margin-end: 0
+}
+
+button {
+    @extend %input-reset;
+}
+
+select {
+    @extend %input-reset;
+}
+
+textarea {
+    @extend %input-reset;
+}
+
+input {
+    @extend %input-reset;
+}
+
+.loader {
+    display: inline-block;
+    position: relative;
+    width: 64px;
+    height: 64px;
+    transform: rotate(45deg);
+    transform-origin: 32px 32px;
+    & > div {
+        top: 23px;
+        left: 19px;
+        position: absolute;
+        width: 26px;
+        height: 26px;
+        background: $crimson;
+        animation: lds-heart 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+        &:after,
+        &:before {
+          content: " ";
+          position: absolute;
+          display: block;
+          width: 26px;
+          height: 26px;
+          background:  $crimson;
+        }
+        &:before {
+          left: -17px;
+          border-radius: 50% 0 0 50%;
+        }
+        &:after {
+          top: -17px;
+          border-radius: 50% 50% 0 0;
+        }
+    }
+  }
+
+.box {
+    @extend %section; 
+    @extend %container;
+}
+.full-width {
+    @extend %section;
+}
+main.app {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    justify-content: center;
+}
